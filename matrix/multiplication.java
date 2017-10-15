@@ -1,10 +1,6 @@
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Collections;
 import java.util.Scanner;
 class matrix{
     static Scanner sc = new Scanner(System.in);
-
     // input matrix
     public static int[][] input() {
         System.out.println("input matrix:");
@@ -27,7 +23,7 @@ class symmetric extends matrix{
     private static final String SYMMETRIC = "symmetric";
     private static final String SKEW_SYMMETRIC = "skew_symmetric"; 
     
-    public symmetric(){
+    public symmetric(){ //建構方法
         System.out.println("Judgment SYMMETRIC And SKEW_SYMMETRIC");
     }
     
@@ -66,7 +62,7 @@ class symmetric extends matrix{
     }
 
     public static String isSymmetric(int arr[][]){
-        if(bl_symmetric(arr) && bl_skewSymmetric(arr))
+        if(bl_symmetric(arr) && bl_skewSymmetric(arr)) // 矩陣值都為 0 兩者都是
             return SYMMETRIC +" and "+SKEW_SYMMETRIC;
         else if(bl_symmetric(arr))
             return SYMMETRIC;
@@ -77,70 +73,17 @@ class symmetric extends matrix{
     }
 
 }
-/* ############################################################################################################################################### */
-// class  Gauss_Jordan extends matrix_multiplication{
-    
-//     public static List<int[]> store(int [][]matrix){
-//         List<int[]> list = new LinkedList<>();
-//         for(int i=0; i<matrix.length; i++)
-//             list.add(matrix[i]);
-//         return list;
-//     }
-    
-//     // exchange
-//     public static List<int []> col_Change(int[][]matrix, int a,int b){
-//         Collections.swap(store(matrix), a, b);
-//         return list;
-//     }
-//     // *
-//     public static List<int []> col_multiple(int[][]matrix,int cola,int colb,int num){
-//         List<int[]> list = new LinkedList<>();
-//         list = store(matrix);
 
-//         int a [] = (int [])list.get(cola);
-//         int b [] = (int [])list.get(colb);
-//         for(int j=0; j<b.length ; j++){
-//             b[j] = a[j] * num + b[j];
-//         }
-//         return list;
-//     }
-//     // /
-//     public static List<int []> col_div(int[][]matrix,int cola,int colb,int num){
-//         List<int[]> list = new LinkedList<>();
-//         list = store(matrix);
-
-//         int a [] = (int [])list.get(cola);
-//         int b [] = (int [])list.get(colb);
-//         for(int j=0; j<b.length ; j++){
-//             b[j] = a[j] / num + b[j];
-//         }
-//         return list;
-//     }
-
-    
-//     public static void display(LinkedList<int []> list){
-//         for(int i=0; i<list.size(); i++){
-//             int b [] = (int [])list.get(i);  
-//             for(int j=0; j<b.length ; j++){
-//                 System.out.printf("%4d",b[j]);
-//             }
-//             System.out.println();
-//         }
-
-//     }
-
-// }
-/*#########################################################################################################################*/
 public class multiplication extends matrix{
 
     // Message
     private static final String FAIL = "Condition does not match";
     private static final String TRUE = "Condition match";
 
-    public multiplication(){
+    public multiplication(){ //建構方法
         System.out.println("Matrix multiplication");
     }
-    // 
+    // 矩陣相乘
     public static int[][] multiplication(int a[][],int b[][]){
         int c[][]= new int[a.length][b[0].length];
         int i=0,j=0,k=0;
@@ -153,7 +96,7 @@ public class multiplication extends matrix{
         }
         return c;
     }
-    // 
+    // 結過印出
     public static void display(int a[][]){
         System.out.println("result:");
         for(int arr[] : a){
@@ -164,7 +107,7 @@ public class multiplication extends matrix{
         }
     }
 
-    // judgment matrix_multiplication A[row]==B[row]condition
+    // 判斷 matrix_multiplication A[row]==B[row] condition
     public static String ismatrix(int a[][],int b[][]){
         inputValue(a);
         inputValue(b);
