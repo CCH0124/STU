@@ -6,7 +6,7 @@ java matrix
 
 ## 執行時內容與功能
 
-**矩陣相乘
+**矩陣相乘**
 
 限制：只能兩個矩陣  
 Matrix multiplication  
@@ -28,7 +28,7 @@ result: //相乘結果
 3   3   3  
 Condition match  
 
-**對稱與斜對稱
+**對稱與斜對稱**
 
 Judgment SYMMETRIC And SKEW_SYMMETRIC  
 input matrix: //輸入一個矩陣大小  
